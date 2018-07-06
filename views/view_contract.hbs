@@ -1,0 +1,1106 @@
+<h3 class="page-header">
+    <i class="fa fa-search"></i> Contract View:
+    <span class="label label-success">TTI-000{{this.contract_id}}</span>
+</h3>
+
+<div class="container-fluid">
+    <div class="col-lg-12">
+        <div class="panel panel-green">
+            <div class="panel-heading">
+                <i class="fa fa-star">
+                </i> Contract Information
+            </div>
+
+            <div class="panel-body">
+                {{!-- GENERAL INFORMATION --}}
+                <div class="col-lg-12">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <i class="fa fa-book"></i>
+                            <b>General Information</b>
+                        </div>
+                        <div class="panel-body">
+                            {{#each genInfoVal}}
+                            <div class="col-lg-12">
+                                <table class="table table-bordered table-info">
+                                    <tbody>
+                                        <tr>
+                                            <td>Customer Name</td>
+                                            <td>
+                                                <b>{{this.customer_name}}</b>
+                                            </td>
+                                            <td>Date Booked</td>
+                                            <td>
+                                                <b>{{this.str_date_booked}}</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Customer Address</td>
+                                            <td>
+                                                <b>{{this.customer_address}}</b>
+                                            </td>
+                                            <td>Contract Reference</td>
+                                            <td>
+                                                <b>{{this.contract_reference}}</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>End User Name</td>
+                                            <td>
+                                                <b>{{this.end_user_name}}</b>
+                                            </td>
+                                            <td>Sales Order Number</td>
+                                            <td>
+                                                <b>{{this.sales_order_number}}</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Site Address</td>
+                                            <td>
+                                                <b>{{this.site_address}}</b>
+                                            </td>
+                                            <td>Account Manager</td>
+                                            <td>
+                                                <b>{{this.account_manager}}</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contact Person</td>
+                                            <td>
+                                                <b>{{this.contact_person}}</b>
+                                            </td>
+                                            <td>Business Group</td>
+                                            <td>
+                                                <b>{{this.business_group}}</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contact Number</td>
+                                            <td>
+                                                <b>{{this.contact_number}}</b>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contact Email</td>
+                                            <td>
+                                                <b>{{this.email_address}}</b>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+
+                {{!-- CONTRACT DETAILS --}}
+                <div class="col-lg-12">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <i class="fa fa-info"></i>
+                            <b>Contract Details</b>
+                        </div>
+                        <div class="panel-body">
+                            {{#each contDetailVal}}
+                            <div class="col-lg-12">
+                                <table class="table table-bordered table-info">
+                                    <tbody>
+                                        <tr>
+                                            <td>Account Type</td>
+                                            <td>
+                                                <b>{{this.account_type}}</b>
+                                            </td>
+                                            <td>Contract Start</td>
+                                            <td>
+                                                <b>{{this.str_contract_start}}</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Document Type</td>
+                                            <td>
+                                                <b>{{this.document_type}}</b>
+                                            </td>
+                                            <td>Contract End</td>
+                                            <td>
+                                                <b>{{this.str_contract_end}}</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contract Status</td>
+                                            <td>
+                                                <b>{{this.status}}</b>
+                                            </td>
+                                            <td>System</td>
+                                            <td>
+                                                <b>{{this.system}}</b>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+
+                {{!-- SLA --}}
+                <div class="col-lg-12">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <i class="fa fa-clock-o"></i>
+                            <b>Service Level Agreement</b>
+                        </div>
+                        <div class="panel-body">
+                            {{#each contDetailVal}}
+                            <div class="col-lg-12">
+                                <table class="table table-bordered table-info">
+                                    <tbody>
+                                        <tr>
+                                            <td align="center">
+                                                <b>Severity</b>
+                                            </td>
+                                            <td align="center">
+                                                <b>Phone Support</b>
+                                            </td>
+                                            <td align="center">
+                                                <b>Within Metro Manila</b>
+                                            </td>
+                                            <td align="center">
+                                                <b>Outside Metro Manila</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                URGENT
+                                            </td>
+                                            <td>
+                                                <b>{{this.cd_ps_urgent}}</b>
+                                            </td>
+                                            <td>
+                                                <b>{{this.cd_within_mm_urgent}}</b>
+                                            </td>
+                                            <td>
+                                                <b>{{this.cd_outside_mm_urgent}}</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                HIGH
+                                            </td>
+                                            <td>
+                                                <b>{{this.cd_ps_high}}</b>
+                                            </td>
+                                            <td>
+                                                <b>{{this.cd_within_mm_high}}</b>
+                                            </td>
+                                            <td>
+                                                <b>{{this.cd_outside_mm_high}}</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                MEDIUM
+                                            </td>
+                                            <td>
+                                                <b>{{this.cd_ps_medium}}</b>
+                                            </td>
+                                            <td>
+                                                <b>{{this.cd_within_mm_medium}}</b>
+                                            </td>
+                                            <td>
+                                                <b>{{this.cd_outside_mm_medium}}</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                LOW
+                                            </td>
+                                            <td>
+                                                <b>{{this.cd_ps_low}}</b>
+                                            </td>
+                                            <td>
+                                                <b>{{this.cd_within_mm_low}}</b>
+                                            </td>
+                                            <td>
+                                                <b>{{this.cd_outside_mm_low}}</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                ACTIVE FILE
+                                            </td>
+                                            <td>
+                                                <b>{{this.cd_ps_af}}</b>
+                                            </td>
+                                            <td>
+                                                <b>{{this.cd_within_mm_af}}</b>
+                                            </td>
+                                            <td>
+                                                <b>{{this.cd_outside_mm_af}}</b>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+
+                {{!-- SCOPE OF WORK --}}
+                <div class="col-lg-12">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <i class="fa fa-wrench"></i>
+                            <b>Scope of Work</b>
+                        </div>
+                        <div class="panel-body">
+                            {{#each sowVal}}
+                            <div class="col-lg-12">
+                                <table class="table table-bordered table-info">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                Service Type
+                                            </td>
+                                            <td>
+                                                <b>{{this.service_type}}</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Tech Group Email
+                                            </td>
+                                            <td>
+                                                <b>{{this.tech_group_emails}}</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Other Scope
+                                            </td>
+                                            <td>
+                                                <b>{{this.sow_remarks}}</b>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            {{/each}} {{#each sowVal}}
+                            <div class="col-lg-6">
+                                <table class="table table-bordered table-info">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                PM Frequency
+                                            </td>
+                                            <td>
+                                                <b>{{this.pm_frequency}}</b>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            {{/each}} {{#each sowVal}}
+                            <div class="col-lg-6">
+                                <table class="table table-bordered table-info">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                Health Check Frequency
+                                            </td>
+                                            <td>
+                                                <b>{{this.health_check_frequency}}</b>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            {{/each}}
+
+                            <div class="col-lg-6">
+                                <table class="table table-bordered table-info">
+                                    <tbody>
+                                        <tr align="center">
+                                            <td colspan="2">
+                                                <b>PM Schedules</b>
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>Start Date</td>
+                                            <td>End Date</td>
+                                        </tr>
+                                        {{#each pmSchedVal}}
+                                        <tr align="center">
+                                            <td>
+                                                <b>{{this.str_pm_sched_start}}</b>
+                                            </td>
+                                            <td>
+                                                <b>{{this.str_pm_sched_end}}</b>
+                                            </td>
+                                        </tr>
+                                        {{/each}}
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <table class="table table-bordered table-info">
+                                    <tbody>
+                                        <tr align="center">
+                                            <td colspan="2">
+                                                <b>Health Check Schedules</b>
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>Start Date</td>
+                                            <td>End Date</td>
+                                        </tr>
+                                        {{#each hcSchedVal}}
+                                        <tr align="center">
+                                            <td>
+                                                <b>{{this.str_hc_start}}</b>
+                                            </td>
+                                            <td>
+                                                <b>{{this.str_hc_end}}</b>
+                                            </td>
+                                        </tr>
+                                        {{/each}}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{!-- RENEWAL STATUS --}}
+                <div class="col-lg-12">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <i class="fa fa-retweet"></i>
+                            <b>Renewal Status</b>
+                        </div>
+                        <div class="panel-body">
+                            {{#each contRnewVal}}
+                            <table class="table table-bordered table-info">
+                                <tbody>
+                                    <tr>
+                                        <td>Renewal Update</td>
+                                        <td>
+                                            <b>{{this.renewal_update_type}}</b>
+                                        </td>
+                                        <td>MA Quote Reference</td>
+                                        <td>
+                                            <b>{{this.ma_quote_reference}}</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>AM Update</td>
+                                        <td>
+                                            <b>{{this.am_update_type}}</b>
+                                        </td>
+                                        {{/each}} {{#each remarksVal}}
+                                        <td>Remarks</td>
+                                        <td>
+                                            <b>{{this.remarks}}</b>
+                                        </td>
+                                        {{/each}}
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                {{!-- EQUIPMENT LIST --}}
+                <div class="col-lg-12">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <i class="fa fa-gears"></i>
+                            <b>Equipment List</b>
+
+                            <div class="pull-right">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-gear"></i> Actions
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu pull-right" role="menu">
+                                        <li>
+                                            <a href="#" data-toggle="modal" data-target="#addEquipmentModal">
+                                                <i class="fa fa-plus"></i> Add Equipment
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" data-toggle="modal" data-target="#importCSVModal">
+                                                <i class="fa fa-upload"></i> Upload CSV
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped table-bordered table-hover" id="tblEquipmentList" style="width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <center>Product ID</center>
+                                        </th>
+                                        <th>
+                                            <center>Serial Number</center>
+                                        </th>
+                                        <th>
+                                            <center>Actions</center>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each eqListItemVal}}
+                                    <tr>
+                                        <td>
+                                            {{this.product_id}}
+                                        </td>
+                                        <td align="center">
+                                            <span class="label label-success">{{this.serial_number}}</span>
+                                        </td>
+                                        <td align="center">
+                                            <button class="btn btn-info  btnViewEquipment" data-id="{{this.id}}" title="View Equipment">
+                                                <i class="fa fa-search"></i> View Details
+                                            </button>
+                                            <button class="btn btn-warning btnUpdateEquipment" data-id="{{this.id}}" title="Update Equipment">
+                                                <i class="fa fa-pencil"></i> Update Equipment
+                                            </button>
+                                            <button class="btn btn-success btnReplaceSerial" data-id="{{this.id}}" title="Replace Serial">
+                                                <i class="fa fa-reply-all"></i> Replace Serial
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    {{!-- ADD EQUIPMENT MODAL --}}
+    <div class="modal fade" id="addEquipmentModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        <i class="fa fa-gear"></i> Add Equipment</h4>
+                </div>
+                <form id="addEquipmentForm">
+                    <div class="modal-body">
+                        <div class="row">
+                            <input type="hidden" name="hidden_contract_id" value="{{this.contract_id}}">
+                            <div class="col-md-12">
+                                <h4>
+                                    <i class="fa fa-book"></i> Equipment Details</h4>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Product ID: </b>
+                                            </label>
+                                            <input type="text" id="ed_product_id" name="ed_product_id" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Description: </b>
+                                            </label>
+                                            <input type="text" id="ed_description" name="ed_description" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Quantity: </b>
+                                            </label>
+                                            <input type="number" id="ed_quantity" name="ed_quantity" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Serial Number: </b>
+                                            </label>
+                                            <input type="text" id="ed_serial_number" name="ed_serial_number" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Site Location: </b>
+                                            </label>
+                                            <input type="text" id="ed_site_loc" name="ed_site_loc" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <h4>
+                                    <i class="fa fa-book"></i> Trends Coverage</h4>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>DR Number: </b>
+                                            </label>
+                                            <input type="text" id="tc_dr_number" name="tc_dr_number" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>DR Date: </b>
+                                            </label>
+                                            <input type="text" id="tc_dr_date" name="tc_dr_date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Begin Date: </b>
+                                            </label>
+                                            <input type="text" id="tc_begin_date" name="tc_begin_date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>End Date: </b>
+                                            </label>
+                                            <input type="text" id="tc_end_date" name="tc_end_date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <h4>
+                                    <i class="fa fa-book"></i> Principal Coverage</h4>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Principal: </b>
+                                            </label>
+                                            <input type="text" id="pc_principal" name="pc_principal" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Distributor: </b>
+                                            </label>
+                                            <input type="text" id="pc_distributor" name="pc_distributor" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Trends PO: </b>
+                                            </label>
+                                            <input type="text" id="pc_trends_po" name="pc_trends_po" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Trends MPO: </b>
+                                            </label>
+                                            <input type="text" id="pc_trends_mpo" name="pc_trends_mpo" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Contract Number: </b>
+                                            </label>
+                                            <input type="text" id="pc_contract_number" name="pc_contract_number" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Begin Date: </b>
+                                            </label>
+                                            <input type="text" id="pc_begin_date" name="pc_begin_date" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>End Date: </b>
+                                            </label>
+                                            <input type="text" id="pc_end_date" name="pc_end_date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Type of Service: </b>
+                                            </label>
+                                            <input type="text" id="pc_type_of_service" name="pc_type_of_service" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Replacement SLA: </b>
+                                            </label>
+                                            <input type="text" id="pc_replacement_sla" name="pc_replacement_sla" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input type="submit" value="Add Equipment" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {{!-- VIEW EQUIPMENT MODAL --}}
+    <div class="modal fade" id="viewEquipmentModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        <i class="fa fa-gear"></i> View Equipment</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        {{!-- EQUIPMENT DETAILS --}}
+                        <div class="col-lg-12">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">
+                                    <i class="fa fa-book"></i>
+                                    <b>Equipment Details</b>
+                                </div>
+                                <div class="panel-body">
+                                    <table class="table table-bordered table-info">
+                                        <tbody>
+                                            <tr>
+                                                <td>Product ID:</td>
+                                                <td id="tdProductId"></td>
+                                                <td>Description</td>
+                                                <td id="tdDescription"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Quantity</td>
+                                                <td id="tdQuantity"></td>
+                                                <td>Serial Number</td>
+                                                <td id="tdSerialNumber"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Site Location</td>
+                                                <td id="tdSiteLocation"></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{!-- TRENDS COVERAGE --}}
+                        <div class="col-lg-12">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">
+                                    <i class="fa fa-book"></i>
+                                    <b>Trends Coverage</b>
+                                </div>
+                                <div class="panel-body">
+                                    <table class="table table-bordered table-info">
+                                        <tbody>
+                                            <tr>
+                                                <td>DR Number</td>
+                                                <td id="tdDrNumber"></td>
+                                                <td>DR Date</td>
+                                                <td id="tdDrDate"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Begin Date</td>
+                                                <td id="tdEIBeginDate"></td>
+                                                <td>End Date</td>
+                                                <td id="tdEIEndDate"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{!-- PRINCIPAL COVERAGE --}}
+                        <div class="col-lg-12">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">
+                                    <i class="fa fa-book"></i>
+                                    <b>Principal Coverage</b>
+                                </div>
+                                <div class="panel-body">
+                                    <table class="table table-bordered table-info">
+                                        <tbody>
+                                            <tr>
+                                                <td>Principal</td>
+                                                <td id="tdPrincipal"></td>
+                                                <td>Distributor</td>
+                                                <td id="tdDistributor"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Trends PO</td>
+                                                <td id="tdTrendsPO"></td>
+                                                <td>Trends MPO</td>
+                                                <td id="tdTrendsMPO"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Begin Date</td>
+                                                <td id="tdPCBeginDate"></td>
+                                                <td>End Date</td>
+                                                <td id="tdPCEndDate"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Contract Number</td>
+                                                <td id="tdContractNumber"></td>
+                                                <td>Type of Service</td>
+                                                <td id="tdTypeOfService"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Replacement SLA</td>
+                                                <td id="tdSLA"></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{!-- UPDATE EQUIPMENT MODAL --}}
+    <div class="modal fade" id="updateEquipmentModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        <i class="fa fa-gear"></i> Update Equipment</h4>
+                </div>
+                <form id="updateEquipmentForm">
+                    <div class="modal-body">
+                        <div class="row">
+                            <input type="hidden" name="hidden_contract_id" value="{{this.contract_id}}">
+                            <input type="hidden" id="hidden_equipment_id" name="hidden_equipment_id">
+
+                            <div class="col-md-12">
+                                <h4>
+                                    <i class="fa fa-book"></i> Equipment Details</h4>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Product ID: </b>
+                                            </label>
+                                            <input type="text" id="update_ed_product_id" name="ed_product_id" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Description: </b>
+                                            </label>
+                                            <input type="text" id="update_ed_description" name="ed_description" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Quantity: </b>
+                                            </label>
+                                            <input type="number" id="update_ed_quantity" name="ed_quantity" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Serial Number: </b>
+                                            </label>
+                                            <input type="text" id="update_ed_serial_number" name="ed_serial_number" class="form-control" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Site Location: </b>
+                                            </label>
+                                            <input type="text" id="update_ed_site_loc" name="ed_site_loc" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <h4>
+                                    <i class="fa fa-book"></i> Trends Coverage</h4>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>DR Number: </b>
+                                            </label>
+                                            <input type="text" id="update_tc_dr_number" name="tc_dr_number" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>DR Date: </b>
+                                            </label>
+                                            <input type="text" id="update_tc_dr_date" name="tc_dr_date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Begin Date: </b>
+                                            </label>
+                                            <input type="text" id="update_tc_begin_date" name="tc_begin_date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>End Date: </b>
+                                            </label>
+                                            <input type="text" id="update_tc_end_date" name="tc_end_date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <h4>
+                                    <i class="fa fa-book"></i> Principal Coverage</h4>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Principal: </b>
+                                            </label>
+                                            <input type="text" id="update_pc_principal" name="pc_principal" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Distributor: </b>
+                                            </label>
+                                            <input type="text" id="update_pc_distributor" name="pc_distributor" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Trends PO: </b>
+                                            </label>
+                                            <input type="text" id="update_pc_trends_po" name="pc_trends_po" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Trends MPO: </b>
+                                            </label>
+                                            <input type="text" id="update_pc_trends_mpo" name="pc_trends_mpo" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Contract Number: </b>
+                                            </label>
+                                            <input type="text" id="update_pc_contract_number" name="pc_contract_number" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Begin Date: </b>
+                                            </label>
+                                            <input type="text" id="update_pc_begin_date" name="pc_begin_date" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>End Date: </b>
+                                            </label>
+                                            <input type="text" id="update_pc_end_date" name="pc_end_date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Type of Service: </b>
+                                            </label>
+                                            <input type="text" id="update_pc_type_of_service" name="pc_type_of_service" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>Replacement SLA: </b>
+                                            </label>
+                                            <input type="text" id="update_pc_replacement_sla" name="pc_replacement_sla" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input type="submit" value="Update Equipment" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {{!-- REPLACE SERIAL MODAL --}}
+    <div class="modal fade" id="replaceSerialModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        <i class="fa fa-gear"></i> Replace Serial</h4>
+                </div>
+                <form id="replaceSerialForm">
+                    <div class="modal-body">
+                        <input type="hidden" name="equipment_id" id="hidden_modal_equipment_id">
+                        <div class="form-group">
+                            <label>
+                                Old Serial Numbers:
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <table class="table table-sm" id="tblReplaceSerials">
+                                <tr>
+                                    <th>Serial Number</th>
+                                    <th>Date Added / Replaced</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                New Serial Number:
+                            </label>
+                            <input type="text" id="serial_number" name="serial_number" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input type="submit" value="Replace Serial" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {{!-- UPLOAD CSV --}}
+    <div class="modal fade" id="importCSVModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        <i class="fa fa-file-text-o"></i> Upload Equipment List</h4>
+                </div>
+                <form id="uploadCSVForm">
+                    <div class="modal-body">
+                        <input type="hidden" name="hidden_contract_id" value="{{contract_id}}">
+                        <div class="file-loading">
+                            <input id="input-b9" name="equipList" type="file" accept=".csv" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input type="submit" value="Submit" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

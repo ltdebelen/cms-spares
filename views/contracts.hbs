@@ -1,0 +1,59 @@
+<h3 class="page-header">
+    <i class="fa fa-list"></i> Contracts</h3>
+
+<div class="col-lg-12" style="margin-bottom:20px">
+    <div class="pull-right">
+        <a href="/contracts/create" class="btn btn-success" role="button">
+            <i class="fa fa-plus">
+            </i> Add New
+        </a>
+        <a href="/contracts" class="btn btn-default" role="button">
+            <i class="fa fa-refresh">
+            </i> Refresh List
+        </a>
+    </div>
+</div>
+
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-th-list"></i> Contracts List
+        </div>
+
+        <div class="panel-body">
+            <table class="table table-striped table-bordered table-hover" id="tblContracts" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th>Contract ID</th>
+                        <th>Client</th>
+                        <th>System</th>
+                        <th>Status</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each contractList}}
+                    <tr>
+                        <td>TTI-000{{this.contract_id}}</td>
+                        <td>{{this.customer_name}}</td>
+                        <td>{{this.system}}</td>
+                        <td>{{this.status}}</td>
+                        <td>{{this.contract_start_date}}</td>
+                        <td>{{this.contract_end_date}}</td>
+                        <td class="centered">
+                            <a href="/contracts/view/{{this.contract_id}}" class="btn btn-info" title="View Contract">
+                                <i class="fa fa-search"></i>
+                            </a>
+                              <a href="/contracts/update/{{this.contract_id}}" class="btn btn-warning" title="Update Contract">
+                                <i class="fa fa-pencil"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>{{title_bar}}</title>
+
+	<link rel="icon" type="image/png" href="../icon.png">
+
+	<!-- Bootstrap Core CSS -->
+	<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- MetisMenu CSS -->
+	<link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+	<!-- Morris -->
+	<link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+	<!-- Custom Fonts -->
+	<link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	<!-- Datatables -->
+	<link href="../vendor/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+	<link href="../vendor/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+	<link href="../vendor/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+	<link href="../vendor/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+	<link href="../vendor/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+
+	<!-- Select2 -->
+	<link href="../vendor/select2/select2.css" rel="stylesheet">
+
+	<!-- Date Picker -->
+	<link href="../vendor/datepicker/datepicker3.css" rel="stylesheet">
+
+	<!-- PNotify -->
+	<link href="../vendor/pnotify/dist/pnotify.css" rel="stylesheet">
+	<link href="../vendor/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+	<link href="../vendor/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
+
+	<!-- Krajee File Input -->
+	<link href="../vendor/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+	<div id="wrapper">
+
+		<!-- Navigation -->
+		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand">
+					<i class="fa fa-files-o"></i> Contract Management System</a>
+			</div>
+			<!-- /.navbar-header -->
+
+			<ul class="nav navbar-top-links navbar-right">
+				<!-- /.dropdown -->
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="fa fa-user fa-fw"></i>
+						<i class="fa fa-caret-down"></i>
+					</a>
+					<ul class="dropdown-menu dropdown-user">
+						<li>
+							<a href="/logout">
+								<i class="fa fa-sign-out fa-fw"></i> Logout</a>
+						</li>
+					</ul>
+					<!-- /.dropdown-user -->
+				</li>
+				<!-- /.dropdown -->
+			</ul>
+			<!-- /.navbar-top-links -->
+
+			<div class="navbar-default sidebar" role="navigation">
+				<div class="sidebar-nav navbar-collapse">
+					<ul class="nav" id="side-menu">
+						<li>
+							<a href="/">
+								<i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+						</li>
+						<li>
+							<a href="/contracts/">
+								<i class="fa fa-copy fa-fw"></i> Contracts</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fa fa-gears fa-fw"></i> Maintenance
+								<span class="fa arrow"></span>
+							</a>
+							<ul class="nav nav-second-level collapse">
+								<li>
+									<a href="/data_maintenance/customers">
+										<i class="fa fa-users fa-fw"></i> Customers</a>
+								</li>
+								<li>
+									<a href="/data_maintenance/account_managers">
+										<i class="fa fa-child fa-fw"></i> Account Managers</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="/logs">
+								<i class="fa fa-book fa-fw"></i> Logs</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fa fa-bar-chart fa-fw"></i> Reports</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Page Content -->
+		<div id="page-wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						{{{body}}}
+					</div>
+					<!-- /.col-lg-12 -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container-fluid -->
+		</div>
+		<!-- /#page-wrapper -->
+
+	</div>
+	<!-- /#wrapper -->
+
+	<!-- jQuery -->
+	<script src="../vendor/jquery/jquery.min.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Metis Menu Plugin JavaScript -->
+	<script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+	<!-- Morris -->
+	<script src="../vendor/raphael/raphael.min.js"></script>
+	<script src="../vendor/morrisjs/morris.min.js"></script>
+
+	<!-- Flot Charts JavaScript -->
+	<script src="../vendor/flot/excanvas.min.js"></script>
+	<script src="../vendor/flot/jquery.flot.js"></script>
+	<script src="../vendor/flot/jquery.flot.pie.js"></script>
+	<script src="../vendor/flot/jquery.flot.resize.js"></script>
+	<script src="../vendor/flot/jquery.flot.time.js"></script>
+	<script src="../vendor/flot-tooltip/jquery.flot.tooltip.min.js"></script>
+
+	<!-- Datatables -->
+	<script src="../vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+	<script src="../vendor/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+	<script src="../vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+	<script src="../vendor/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+	<script src="../vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
+	<script src="../vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
+	<script src="../vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
+	<script src="../vendor/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+	<script src="../vendor/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+	<script src="../vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+	<script src="../vendor/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+	<script src="../vendor/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+	<script src="../vendor/jszip/dist/jszip.min.js"></script>
+	<script src="../vendor/pdfmake/build/pdfmake.min.js"></script>
+	<script src="../vendor/pdfmake/build/vfs_fonts.js"></script>
+
+	<!-- Select2 -->
+	<script src="../vendor/select2/select2.js"></script>
+
+	<!-- Date Picker -->
+	<script src="../vendor/moment/moment.js"></script>
+	<script src="../vendor/datepicker/bootstrap-datepicker.js"></script>
+
+	<!-- Bootstrap Wizard -->
+	<script src="../vendor/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+
+	<!-- PNotify -->
+	<script src="../vendor/pnotify/dist/pnotify.js"></script>
+	<script src="../vendor/pnotify/dist/pnotify.buttons.js"></script>
+	<script src="../vendor/pnotify/dist/pnotify.nonblock.js"></script>
+
+	<!-- Krajee -->
+	<script src="../vendor/bootstrap-fileinput/js/fileinput.min.js"></script>
+
+	<!-- Custom Theme JavaScript -->
+	<script src="../dist/js/sb-admin-2.js"></script>
+	<script src="../js/create_contract.js"></script>
+	<script src="../js/update_contract.js"></script>
+	<script src="../js/equipment_list.js"></script>
+	<script src="../js/data_maintenance.js"></script>
+	<script src="../js/logs.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,394 @@
+<h3 class="page-header">
+    <i class="fa fa-pencil"></i> Contract Create</h3>
+
+<div class="container-fluid">
+    <div class="col-lg-12">
+        <div class="panel panel-green">
+            <div class="panel-heading">
+                <i class="fa fa-star">
+                </i> New Contract
+            </div>
+            <div class="panel-body">
+                <div id="rootwizard">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <div class="container">
+                                <ul>
+                                    <li>
+                                        <a href="#tab1" data-toggle="tab">General Information</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#tab2" data-toggle="tab">Contract Details</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#tab3" data-toggle="tab">Scope Of Work</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#tab4" data-toggle="tab">Renewal Status</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#tab5" data-toggle="tab">Save</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="bar" class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0"
+                            aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+                    </div>
+                    <form role="form" id="create_contract_form">
+                        <div class="tab-content">
+
+                            {{!-- GENERAL INFORMATION --}}
+                            <div class="tab-pane" id="tab1">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Customer Name</label>
+                                                <select class="form-control customerNameList" name="gi_customer_name">
+                                                    <option disabled selected value> -- Choose Option -- </option>
+                                                    {{#each customerList}}
+                                                    <option value="{{this.name}}" data-address="{{this.address}}" data-id="{{this.id}}">{{this.name}}</option>
+                                                    {{/each}}
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Customer Address</label>
+                                                <textarea class="form-control" id="txtAddress" rows="3" name="gi_customer_address" style="margin: 0px -0.375px 0px 0px; height: auto; width: relative; resize:none;"
+                                                    readonly></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>End User Name</label>
+                                                <select class="form-control endUserNameList" name="gi_end_user_name">
+                                                    <option disabled selected value> -- Choose Option -- </option>
+                                                    {{#each customerList}}
+                                                    <option value="{{this.name}}" data-address="{{this.address}}" data-id="{{this.id}}">{{this.name}}</option>
+                                                    {{/each}}
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Site Address</label>
+                                                <textarea class="form-control" id="txtSiteAddress" name="gi_site_address" rows="4" style="margin: 0px -0.375px 0px 0px; height: auto; width: relative; resize:none;"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Contact Person</label>
+                                                <input type="text" class="form-control" name="gi_contact_person">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Contact Number</label>
+                                                <input type="text" class="form-control" name="gi_contact_number">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Email Address</label>
+                                                <input type="text" class="form-control" name="gi_contact_email_address">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Date Booked</label>
+                                                <input type="text" class="form-control dateBooked" name="gi_date_booked">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Contract Reference</label>
+                                                <input type="text" class="form-control" name="gi_contract_reference">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Sales Order Number</label>
+                                                <input type="text" class="form-control" name="gi_sales_order_number">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Account Manager</label>
+                                                <select class="form-control amList" name="gi_account_manager">
+                                                    <option disabled selected value> -- Choose Option -- </option>
+                                                    {{#each amList}}
+                                                    <option value="{{this.first_name}} {{this.last_name}}" data-group="{{this.group_name}}" data-id="{{this.id}}">{{this.first_name}} {{this.last_name}}</option>
+                                                    {{/each}}
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Business Group</label>
+                                                <input type="text" class="form-control" id="txtBusinessGroup" name="gi_business_group" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{!-- CONTRACT DETAILS --}}
+                            <div class="tab-pane" id="tab2">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Account Type</label>
+                                                <select class="form-control acctTypeList" name="cd_acct_type_id">
+                                                    <option disabled selected value> -- Choose Option -- </option>
+                                                    {{#each acctList}}
+                                                    <option value="{{this.id}}">{{this.account_type}}</option>
+                                                    {{/each}}
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Document Type</label>
+                                                <select class="form-control" name="cd_doc_type_id">
+                                                    <option disabled selected value> -- Choose Option -- </option>
+                                                    {{#each docList}}
+                                                    <option value="{{this.id}}">{{this.document_type}}</option>
+                                                    {{/each}}
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Status</label>
+                                                <select class="form-control" name="cd_status">
+                                                    <option disabled selected value> -- Choose Option -- </option>
+                                                    {{#each contStatList}}
+                                                    <option value="{{this.status}}">{{this.status}}</option>
+                                                    {{/each}}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Contract Start Date</label>
+                                                <input type="text" class="form-control" id="cdStartDate" name="cd_start_date">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Contract End Date</label>
+                                                <input type="text" class="form-control" id="cdEndDate" name="cd_end_date">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>System</label>
+                                                <input type="text" class="form-control" name="cd_system">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <h4 class="page-header">SLA & Response Time</h4>
+                                        <div class="col-lg-4">
+                                            <h4 class="page-header">Phone Support</h4>
+                                            <div class="form-group">
+                                                <label>Urgent</label>
+                                                <textarea class="form-control" rows="2" name="cd_ps_urgent" id="cd_ps_urgent" style="resize:none;"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>High</label>
+                                                <textarea class="form-control" rows="2" name="cd_ps_high" id="cd_ps_high" style="resize:none;"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Medium</label>
+                                                <textarea class="form-control" rows="2" name="cd_ps_medium" id="cd_ps_medium" style="resize:none;"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Low</label>
+                                                <textarea class="form-control" rows="2" name="cd_ps_low" id="cd_ps_low" style="resize:none;"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Active File</label>
+                                                <textarea class="form-control" rows="2" name="cd_ps_af" id="cd_ps_af" style="resize:none;"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <h4 class="page-header">Within Metro Manila</h4>
+                                            <div class="form-group">
+                                                <label>Urgent</label>
+                                                <textarea class="form-control" rows="2" name="cd_within_mm_urgent" id="cd_within_mm_urgent" style="resize:none;"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>High</label>
+                                                <textarea class="form-control" rows="2" name="cd_within_mm_high" id="cd_within_mm_high" style="resize:none;"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Medium</label>
+                                                <textarea class="form-control" rows="2" name="cd_within_mm_medium" id="cd_within_mm_medium" style="resize:none;"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Low</label>
+                                                <textarea class="form-control" rows="2" name="cd_within_mm_low" id="cd_within_mm_low" style="resize:none;"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Active File</label>
+                                                <textarea class="form-control" rows="2" name="cd_within_mm_af" id="cd_within_mm_af" style="resize:none;"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <h4 class="page-header">Outside Metro Manila</h4>
+                                            <div class="form-group">
+                                                <label>Urgent</label>
+                                                <textarea class="form-control" rows="2" name="cd_outside_mm_urgent" id="cd_outside_mm_urgent" style="resize:none;"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>High</label>
+                                                <textarea class="form-control" rows="2" name="cd_outside_mm_high" id="cd_outside_mm_high" style="resize:none;"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Medium</label>
+                                                <textarea class="form-control" rows="2" name="cd_outside_mm_medium" id="cd_outside_mm_medium" style="resize:none;"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Low</label>
+                                                <textarea class="form-control" rows="2" name="cd_outside_mm_low" id="cd_outside_mm_low" style="resize:none;"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Active File</label>
+                                                <textarea class="form-control" rows="2" name="cd_outside_mm_af" id="cd_outside_mm_af" style="resize:none;"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{!-- SCOPE OF WORK --}}
+                            <div class="tab-pane" id="tab3">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Service Type</label>
+                                                <select class="form-control" name="sow_service_type_id">
+                                                    <option disabled selected value> -- Choose Option -- </option>
+                                                    {{#each serviceTypesList}}
+                                                    <option value="{{this.id}}">{{this.service_type}}</option>
+                                                    {{/each}}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Tech Group Email</label>
+                                                <select class="form-control" id="tech_group_email" name="sow_tech_group_email[]" multiple="multiple">
+                                                    {{#each techGroupList}}
+                                                    <option value="{{this.tech_group_people_id}}">{{this.email}}</option>
+                                                    {{/each}}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label>Other Scope</label>
+                                                <textarea class="form-control" rows="4" name="sow_remarks" style="margin: 0px -0.375px 0px 0px; height: auto; width: relative; resize:none;"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h4 class="page-header">Preventive Maintenance</h4>
+                                            <div class="form-group">
+                                                <label>PM Frequency</label>
+                                                <select class="form-control" id="pmFreqList" name="sow_pm_frequency_id">
+                                                    <option disabled selected value> -- Choose Option -- </option>
+                                                    {{#each pmFreqList}}
+                                                    <option value="{{this.id}}">{{this.pm_frequency}}</option>
+                                                    {{/each}}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h4 class="page-header">Health Check</h4>
+                                            <div class="form-group">
+                                                <label>Health Check Frequency</label>
+                                                <select class="form-control" id="hcFreqList" name="sow_health_check_id">
+                                                    <option disabled selected value> -- Choose Option -- </option>
+                                                    {{#each hcFreqList}}
+                                                    <option value="{{this.id}}">{{this.health_check_frequency}}</option>
+                                                    {{/each}}
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <h4 class="page-header">PM Schedules</h4>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading"></div>
+                                                <div class="panel-body" id="pmSchedDiv"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <h4 class="page-header">Health Check Schedules</h4>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading"></div>
+                                                <div class="panel-body" id="hcSchedDiv"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{!-- RENEWAL STATUS --}}
+                            <div class="tab-pane" id="tab4">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Renewal Update</label>
+                                                <select class="form-control" name="rs_renewal_update_id">
+                                                    <option disabled selected value> -- Choose Option -- </option>
+                                                    {{#each rnewList}}
+                                                    <option value="{{this.id}}">{{this.renewal_update_type}}</option>
+                                                    {{/each}}
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>AM Update</label>
+                                                <select class="form-control" name="rs_am_update_id">
+                                                    <option disabled selected value> -- Choose Option -- </option>
+                                                    {{#each amupList}}
+                                                    <option value="{{this.id}}">{{this.am_update_type}}</option>
+                                                    {{/each}}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>MA Quote Reference</label>
+                                                <input type="text" class="form-control" name="rs_ma_quote_reference">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label>Remarks</label>
+                                                <textarea class="form-control" rows="4" name="gc_remarks" style="margin: 0px -0.375px 0px 0px; height: auto; width: relative; resize:none;"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="tab5">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <center>
+                                            <input type="submit" value="Save Contract" class="btn btn-primary btn-lg" />
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="pager wizard">
+                            <li class="previous first" style="display:none;">
+                                <a href="#">First</a>
+                            </li>
+                            <li class="previous">
+                                <a href="#">Previous</a>
+                            </li>
+                            <li class="next last" style="display:none;">
+                                <a href="#">Last</a>
+                            </li>
+                            <li class="next">
+                                <a href="#">Next</a>
+                            </li>
+                        </ul>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
